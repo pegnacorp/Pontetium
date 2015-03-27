@@ -1,16 +1,15 @@
 <?php
-include_once(dirname(__FILE__)."/../app/Model/User.php");
-include_once(dirname(__FILE__)."/../app/View/UserList.php");
-include_once(dirname(__FILE__)."/../app/View/UserForm.php");
+include_once(dirname(__FILE__)."/../Model/User.php");
+include_once(dirname(__FILE__)."/../View/UserList.php");
+include_once(dirname(__FILE__)."/../View/UserForm.php");
+include_once(dirname(__FILE__)."/../mvc/system/Controller.php");
 
-	class UserController{
+
+	class UserController extends Controller{
 		public $action;
 
-	function __construct(){
-	}
-
 		function listing(){
-			$user = new User();
+			$user = new User("","","","");
 			$users = $user->getList();
 			$userList = new UserList();
 			$userList-> listUsers($users);
@@ -36,27 +35,18 @@ include_once(dirname(__FILE__)."/../app/View/UserForm.php");
 		function modify(){
 
 		}
-		function action($action){
-				switch ($action){
-					case "list":
-							$this->listing();
-							break;
-					case "add":
-							$this ->add();
-							break;
-					case "delete":
-							$this->delete();
-							break;
-					case "modify":
-							$this->modify();
-							break;
-				}
-
+		//No funciona actualmente
+		function darReglasDeAcceso(){
+			$reglas  = array();
+			$regla1  = "admin,listing,add,delete,modify";
+			array_push($reglas, $regla1);
+			return $reglas;
 		}
 
+
 	}
-	$userController = new UserController();
+	/*userController = new UserController();
 	$actionRequest = $_GET["accion"];
-	$userController->action($actionRequest);
+	$userController->action($actionRequest);*/
 
 ?>

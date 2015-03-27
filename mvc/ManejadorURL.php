@@ -2,38 +2,36 @@
 <?php
 class ManejadorURL{
 	public $url;
-	public $controller;
+	public $controller = "ejemplos";
 	public $action;
 	public $params;
 
+	function __construct(){
+		$this->procesarUrl();
+	}
+
 	function procesarUrl(){
-		$url = "miweb.com/index.php/user/new/?ejemplo=hola";
-		//Código para obtener la url de la página
-		//$url = $url="http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
+		$this->url = "miweb.com/index.php/user/new/?ejemplo=hola";
+		$url = $url="http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT'].$_SERVER['REQUEST_URI'];
 		$array = parse_url($url);
 		$elementosPath  = explode("index.php", $url);
 		$elementosQuery = preg_split ("/[\/]+/", $elementosPath[1]);
-		$controller = $elementosQuery[1];
-		$action = $elementosQuery[2];
+		$this->controller = $elementosQuery[1];
+		$this->action = $elementosQuery[2];
 		parse_str($array['query'],$parametros); 
-		echo "Controlador " .$controller;
-		echo "</br>accion " . $action;
-
 	}
 	
 	function getPeticion(){
-		return $url;
+		return $this->url;
 	}
 	function getControlador(){
-		return $controller;
+		return $this->controller;
 	}
 	function getAccion(){
-		return $action;
+		return $this->action;
 	}
 	function getParametros(){
-		return $params;
+		return $this->params;
 	}
 }
-	$manejadorURL = new ManejadorURL();
-	$manejadorURL->procesarUrl();
 ?>

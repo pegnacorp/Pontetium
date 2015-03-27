@@ -1,5 +1,5 @@
 <?php
-	class Config{
+	class Configuracion{
 	private static $instancia;
 	public $params;
 	private function __construct(){
@@ -18,6 +18,6 @@
 		print_r($arregloIni);
 	}
 	}
-	$instancia = Config::getInstance();
+	
 
 ?>
