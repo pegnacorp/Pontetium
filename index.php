@@ -9,15 +9,12 @@ include("mvc/system/WebApplication.php");
 	$controlador = $manejadorURL->getControlador();
 	$accion = $manejadorURL->getAccion();
 	echo $accion;*/
-
 	$manoDeDios = new ManoDeDios();
 	//$usuario = $manoDeDios->darVida("User",$argumentos);
 	//$dar = "getList";
 	//echo $usuario->user;
-
 	/*$userController = new UserController();
 	$userController->$accion();*/
-
 $webApplication = new WebApplication();
 $webApplication->start();
 ?> 
