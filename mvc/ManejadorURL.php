@@ -2,7 +2,7 @@
 <?php
 class ManejadorURL{
 	public $url;
-	public $controller = "ejemplos";
+	public $controller;
 	public $action;
 	public $params;
 
@@ -17,8 +17,15 @@ class ManejadorURL{
 		$elementosPath  = explode("index.php", $url);
 		$elementosQuery = preg_split ("/[\/]+/", $elementosPath[1]);
 		$this->controller = $elementosQuery[1];
-		$this->action = $elementosQuery[2];
-		parse_str($array['query'],$parametros); 
+
+
+		if(isset($elementosQuery[2])==true){
+			$this->action = $elementosQuery[2];
+		}
+
+		if(isset($array['query'])==true){
+			parse_str($array['query'],$params);
+		}
 	}
 	
 	function getPeticion(){

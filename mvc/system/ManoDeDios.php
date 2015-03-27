@@ -2,9 +2,14 @@
 	class ManoDeDios{
 
 		function darVida($nombreClase,$argumentos){
-			$clase = new ReflectionClass($nombreClase);
-			$objeto = $clase->newInstanceArgs($argumentos);
-			return $objeto;
+			try {
+				$clase = new ReflectionClass($nombreClase);
+				$objeto = $clase->newInstanceArgs($argumentos);
+				return $objeto;
+				
+			} catch (ReflectionException $exception) {
+				echo "No existe la dirección indicada";
+			}
 		}
 	}
 ?>

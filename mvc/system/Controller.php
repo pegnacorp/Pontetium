@@ -7,20 +7,23 @@
 		}
 
 		function runAction($action){
-				switch ($action){
-					case "listing":
-							$this->listing();
+			$accionExistente = false;
+			$reglasDeAcceso = $this->darReglasDeAcceso();
+			foreach($reglasDeAcceso as $regla) {
+				foreach ($regla as $rol => $acciones) {
+					//Si el rol puede usar cierta función
+					foreach ($acciones as $accion) {
+						if($accion===$action){
+							$accionExistente = true;
 							break;
-					case "add":
-							$this ->add();
-							break;
-					case "delete":
-							$this->delete();
-							break;
-					case "modify":
-							$this->modify();
-							break;
+						}
+					}
 				}
+			}
+			if($accionExistente === true){
+				$this->$action();
+			}
+
 		}
 		function redirect($url){
 

@@ -23,13 +23,16 @@ class WebApplication{
 
 	function start(){
 		$nombreControlador =  $this->manejadorUrl->getControlador();
-
 		$accion = $this->manejadorUrl->getAccion();
+		$parametros = $this->manejadorUrl->getParametros();
+
+		if(($nombreControlador==null)||($accion==null)){
+			echo "No existe la dirección indicada";
+		}
 		$argumentos  = array($accion);
 		$manoDeDios = new ManoDeDios();
 		//La mano de Dios usa la función reflexión, para inicializar clases con solo conocer el nombre y su argumentos
 		$controlador = $manoDeDios->darVida($nombreControlador."Controller",$argumentos);
-		//$controlador->action($accion);
 	}
 }
 ?>

@@ -8,6 +8,13 @@ include_once(dirname(__FILE__)."/../mvc/system/Controller.php");
 	class UserController extends Controller{
 		public $action;
 
+		function darReglasDeAcceso(){
+			$reglas  = array();
+			$regla1  = array("admin"=> array("listing","add","delete","modify"));
+			array_push($reglas, $regla1);
+			return $reglas;
+		}
+
 		function listing(){
 			$user = new User("","","","");
 			$users = $user->getList();
@@ -35,18 +42,5 @@ include_once(dirname(__FILE__)."/../mvc/system/Controller.php");
 		function modify(){
 
 		}
-		//No funciona actualmente
-		function darReglasDeAcceso(){
-			$reglas  = array();
-			$regla1  = "admin,listing,add,delete,modify";
-			array_push($reglas, $regla1);
-			return $reglas;
-		}
-
-
 	}
-	/*userController = new UserController();
-	$actionRequest = $_GET["accion"];
-	$userController->action($actionRequest);*/
-
 ?>
