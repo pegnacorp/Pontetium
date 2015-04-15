@@ -3,7 +3,7 @@ include("/mvc/Configuracion.php");
 include("/mvc/Autoloader.php");
 include("/mvc/ManejadorUrl.php");
 include("/mvc/system/SystemUser.php");
-include("mvc/system/ManoDeDios.php");
+include("/mvc/system/ManoDeDios.php");
 include_once("/mvc/system/Controller.php");
 
 class WebApplication{
@@ -25,7 +25,6 @@ class WebApplication{
 		$nombreControlador =  $this->manejadorUrl->getControlador();
 		$accion = $this->manejadorUrl->getAccion();
 		$parametros = $this->manejadorUrl->getParametros();
-
 		if(($nombreControlador==null)||($accion==null)){
 			echo "No existe la dirección indicada";
 		}

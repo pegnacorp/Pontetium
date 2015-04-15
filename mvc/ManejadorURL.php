@@ -24,7 +24,7 @@ class ManejadorURL{
 		}
 
 		if(isset($array['query'])==true){
-			parse_str($array['query'],$params);
+			parse_str($array['query'],$this->params);
 		}
 	}
 	
@@ -41,4 +41,6 @@ class ManejadorURL{
 		return $this->params;
 	}
 }
+
+
 ?>

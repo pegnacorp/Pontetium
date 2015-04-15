@@ -23,10 +23,9 @@
 			if($accionExistente === true){
 				$this->$action();
 			}
-
 		}
 		function redirect($url){
-
+			
 		}
 	}
 ?>

@@ -5,16 +5,20 @@ class UserList extends View{
 		$i = 0;
 		while(count($users)> $i){
 			$usuarioActual = $users[$i];
-			echo "Primer nombre: " . $usuarioActual->firstName."</br>";
+			$manejadorUrl = new ManejadorUrl();
+			/*$parametros = $manejadorUrl->getParametros();
+			echo $parametros["id"];*/
+			$id = $usuarioActual->id;
+			echo "Nombre: " . $usuarioActual->firstName."</br>";
 			echo "Apellido: ".$usuarioActual->lastName."</br>";
 			echo "Usuario: ".$usuarioActual->user."</br>";
 			echo "Contrasena: ".$usuarioActual->password."</br>";
+			echo "<a href='../modify/?id=".$id."'>Modificar usuario</a>";
+			echo " <a href='../delete/?id=".$id."'>Eliminar usuario</a><br>";
 			echo "--------------------------------<br/>";
 			$i++;
-
-
 		}
-		echo "<a href='../controller/UserController.php?accion=add'>Nuevo usuario</a>";
+		echo "<a href='../add/?d'>Nuevo usuario</a>";
 	}
 }
 ?>
