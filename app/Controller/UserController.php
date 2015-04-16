@@ -1,7 +1,7 @@
 <?php
-include_once(dirname(__FILE__)."/../Model/User.php");
-include_once(dirname(__FILE__)."/../View/UserList.php");
-include_once(dirname(__FILE__)."/../View/UserForm.php");
+include_once(dirname(__FILE__)."/../app/Model/User.php");
+include_once(dirname(__FILE__)."/../app/View/UserList.php");
+include_once(dirname(__FILE__)."/../app/View/UserForm.php");
 include_once(dirname(__FILE__)."/../mvc/system/Controller.php");
 
 

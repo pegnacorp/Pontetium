@@ -14,7 +14,7 @@
    }
 
 	function loadConfig(){
-		$arregloIni = parse_ini_file("configuracion.ini");
+		$arregloIni = parse_ini_file("/../app/Config/configuracion.ini");
 		return $arregloIni;
 	}
 	}

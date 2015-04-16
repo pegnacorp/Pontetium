@@ -1,5 +1,5 @@
 <?php
-include_once(dirname(__FILE__)."/View.php");
+include_once(dirname(__FILE__)."/app/View.php");
 class UserList extends View{
 	function listUsers($users){
 		$i = 0;

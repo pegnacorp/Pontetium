@@ -36,21 +36,21 @@ ALTERNATIVA A AUTOLOADER
 
     public function view($class)
     {
-    	set_include_path(get_include_path().PATH_SEPARATOR.'./app/views/');
+    	set_include_path(get_include_path().PATH_SEPARATOR.'./app/View/');
         spl_autoload($class);
         spl_autoload('View');
     }
 
     public function controller($class)
     {
-        set_include_path(get_include_path().PATH_SEPARATOR.'./app/controllers');
+        set_include_path(get_include_path().PATH_SEPARATOR.'./app/Controller/');
         spl_autoload($class);
     }
 
     public function model($class)
     {
     	set_include_path(get_include_path().PATH_SEPARATOR.'./mvc/database/');
-        set_include_path(get_include_path().PATH_SEPARATOR.'./app/models/');
+        set_include_path(get_include_path().PATH_SEPARATOR.'./app/Model/');
         $class = preg_replace('/Controller/','',$class);
         spl_autoload($class);
         spl_autoload('ActiveRecord');
@@ -59,7 +59,7 @@ ALTERNATIVA A AUTOLOADER
 
     public function config($class)
     {
-        set_include_path(get_include_path().PATH_SEPARATOR.'./app/config/');
+        set_include_path(get_include_path().PATH_SEPARATOR.'./app/Config/');
         spl_autoload($class);
     }
     */
