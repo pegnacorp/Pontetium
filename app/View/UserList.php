@@ -1,12 +1,12 @@
 <?php
-include_once(dirname(__FILE__)."/app/View.php");
+
 class UserList extends View{
 	function listUsers($users){
 		$i = 0;
 		while(count($users)> $i){
 			$usuarioActual = $users[$i];
-			$manejadorUrl = new ManejadorUrl();
-			/*$parametros = $manejadorUrl->getParametros();
+			/*$manejadorUrl = new ManejadorUrl();
+			$parametros = $manejadorUrl->getParametros();
 			echo $parametros["id"];*/
 			$id = $usuarioActual->id;
 			echo "Nombre: " . $usuarioActual->firstName."</br>";

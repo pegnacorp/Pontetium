@@ -1,5 +1,5 @@
 <?php
-include_once(dirname(__FILE__)."/app/View.php");
+
 class UserForm extends View{
 	function mostrarFormulario(){
 ?>

@@ -1,5 +1,4 @@
 <?php
-include_once(dirname(__FILE__)."/../mvc/database/ActiveRecord.php");
 
 class User extends ActiveRecord{
 	public $id;

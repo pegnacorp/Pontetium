@@ -15,9 +15,9 @@ class WebApplication{
 	public $autoload;
 
 	function __construct(){
+		$this->autoload  = new Autoloader();
 		$this->instancia = Configuracion::getInstance();
 		$this->manejadorUrl = new ManejadorUrl();
-		$this->autoload  = new Autoloader();
 		$this->systemUser = new systemUser();
 	}
 

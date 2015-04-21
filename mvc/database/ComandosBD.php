@@ -1,8 +1,4 @@
 <?php
-include_once(dirname(__FILE__)."/ConexionBD.php");
-	/**
-	* 
-	*/
 
 	class ComanadosBD{
 		public $parametros;

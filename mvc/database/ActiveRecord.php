@@ -1,9 +1,4 @@
 <?php
-include(dirname(__FILE__)."/ComandosBD.php");
-//include("/ComandosBD.php");
-	/**
-	* 
-	*/
 	class ActiveRecord {
 		public $columnas;
 		public $esNuevoRegistro;

@@ -1,21 +1,6 @@
 <?php
 //include_once(dirname(__FILE__)."/../Model/User.php");
 	class Autoloader{
-		public $DIRECTORIO = '/../Controller/';
-		function autocargar($nombreClase){
-			//include $this->DIRECTORIO . $nombreClase . '.php';
-			include(dirname(__FILE__).'/../Controller/' . $nombreClase . '.php');
-			//echo $this->DIRECTORIO . $nombreClase . '.php';
-
-		}
-	}
-	$autocarga = new Autoloader();
-	$autocarga->autocargar('UserController');
-
-
-/*
-
-ALTERNATIVA A AUTOLOADER
 
 	public static $loader;
 
@@ -50,10 +35,12 @@ ALTERNATIVA A AUTOLOADER
     public function model($class)
     {
     	set_include_path(get_include_path().PATH_SEPARATOR.'./mvc/database/');
+        spl_autoload('ActiveRecord');
+        spl_autoload('ComandosBD');
+        spl_autoload('ConexionBD');
         set_include_path(get_include_path().PATH_SEPARATOR.'./app/Model/');
         $class = preg_replace('/Controller/','',$class);
         spl_autoload($class);
-        spl_autoload('ActiveRecord');
         //spl_autoload('Model');
     }
 
@@ -62,5 +49,5 @@ ALTERNATIVA A AUTOLOADER
         set_include_path(get_include_path().PATH_SEPARATOR.'./app/Config/');
         spl_autoload($class);
     }
-    */
+}
 ?>
