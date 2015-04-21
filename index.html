@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Pontetium : FrameWork que sigue la filosofía Pontetium">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Pontetium</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pegnacorp/Pontetium">View on GitHub</a>
+
+          <h1 id="project_title">Pontetium</h1>
+          <h2 id="project_tagline">FrameWork que sigue la filosofía Pontetium</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pegnacorp/Pontetium/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pegnacorp/Pontetium/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="pontetium" class="anchor" href="#pontetium" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pontetium</h1>
+
+<p>FrameWork que sigue la filosofía Pontetium</p>
+
+<h1>
+<a id="como-usuar-el-framework" class="anchor" href="#como-usuar-el-framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>¿Como usuar el framework?</h1>
+
+<h2>
+<a id="configurar-el-framework" class="anchor" href="#configurar-el-framework" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configurar el framework</h2>
+
+<p>Ir a app configuracion.ini y modificar:
+baseDeDatos, usuario y clave; según su información..</p>
+
+<h2>
+<a id="crear-un-constructor" class="anchor" href="#crear-un-constructor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Crear un constructor</h2>
+
+<ol>
+<li>Extender de Controller el controlador.</li>
+<li>Crear una función llamada darReglasDeAcceso()
+Que va a tener esta estructura:</li>
+</ol>
+
+<pre><code>        function darReglasDeAcceso(){
+            $reglas  = array();
+            $regla1  = array("admin"=&gt; array("listing","add","delete","modify"));
+            array_push($reglas, $regla1);
+            return $reglas;
+        }
+</code></pre>
+
+<p>Todas las funciones que puedas llamar desde la dirección, ejemplo:</p>
+
+<pre><code>index.php/User/modify/?id=1
+</code></pre>
+
+<p>Se pondrá en el arreglo.
+Cuando realicé el framework, no corregí la diferencia de admin o un usuario normal, entonces todas las funciones que hagan;   pónganlas en admin.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Pontetium maintained by <a href="https://github.com/pegnacorp">pegnacorp</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
